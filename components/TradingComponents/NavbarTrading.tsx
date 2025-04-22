@@ -14,7 +14,7 @@ export default function NavTrading() {
           <div className="flex gap-4 ">
             <div className="flex items-center justify-center gap-3 px-3 py-2 rounded-md bg-white text-black">
               <img src="/Voin.png" alt="Logo" className="size-6" />
-              <h1 className="mr-2">130.000,00</h1>
+              <h1 className="mr-2">130.000.00</h1>
             </div>
 
             <Button className="bg-white text-black" variant={"ghost"}>

@@ -1,7 +1,7 @@
 "use client";
 
-import TradePage from "../../components/pages/trade-page";
+import Chart from "@/components/TradingComponents/Chart";
 
 export default function Page() {
-  return <TradePage />;
+  return <Chart />;
 }

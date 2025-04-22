@@ -119,7 +119,7 @@ export default function Chart() {
       </div>
 
       {/* Seletor e botões */}
-      <div className="flex max-md:flex-wrap w-full items-center pb-24">
+      <div className="flex max-md:flex-wrap w-full items-center pb-20">
         <div className="flex w-60 max-sm:w-full p-4">
           <Select value={selectedPair} onValueChange={setSelectedPair}>
             <SelectTrigger className="bg-[#0a1530] text-white p-2 rounded border border-green-500/30">
