@@ -16,14 +16,14 @@ export default function NavBottom() {
     <div className="fixed bottom-0 left-0 right-0 bg-[#212121] border-t border-green-500/30 z-50">
       <div className="flex justify-around items-center h-16">
         <button
-          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
+          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
           onClick={navigateToHome}
         >
           <Home className="h-5 w-5" />
           <span className="text-xs mt-1">Início</span>
         </button>
         <button
-          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
+          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
           onClick={navigateToMarket}
         >
           <BarChart2 className="h-5 w-5" />
@@ -38,14 +38,14 @@ export default function NavBottom() {
           <div className="absolute bottom-0 w-6 h-1 bg-green-500 rounded-t-full"></div>
         </button>
         <button
-          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
+          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
           onClick={navigateToWallet}
         >
           <Wallet className="h-5 w-5" />
           <span className="text-xs mt-1">Carteira</span>
         </button>
         <button
-          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
+          className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
           onClick={navigateToProfile}
         >
           <User className="h-5 w-5" />
