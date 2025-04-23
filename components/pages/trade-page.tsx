@@ -4,11 +4,6 @@ import type React from "react";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
-  Home,
-  BarChart2,
-  Repeat,
-  Wallet,
-  User,
   Menu,
   TrendingUp,
   ArrowUp,
@@ -32,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/components/ui/use-toast";
+import NavBottom from "../HomeComponents/NavBottom";
 
 // Tipo para os dados de velas (candlestick)
 interface CandleData {
@@ -97,22 +93,6 @@ export default function TradePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(0);
-  const router = useRouter();
-
-  // Função para navegar para a página da carteira
-  const navigateToWallet = () => {
-    router.push("/voin-wallet");
-  };
-
-  // Função para navegar para a página de perfil
-  const navigateToProfile = () => {
-    router.push("/profile");
-  };
-
-  // Função para navegar para a página de mercado
-  const navigateToMarket = () => {
-    router.push("/market");
-  };
 
   // Buscar dados da API da Binance
   const fetchCandleData = useCallback(async () => {
@@ -831,46 +811,8 @@ export default function TradePage() {
       </div>
 
       {/* Navegação inferior (Bottom Navigation) estilo Binance */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#050a1c] border-t border-green-500/30 z-50">
-        <div className="flex justify-around items-center h-16">
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={() => router.push("/")}
-          >
-            <Home className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Início</span>
-          </button>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={navigateToMarket}
-          >
-            <BarChart2 className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Mercado</span>
-          </button>
-
-          <div className="flex flex-col items-center justify-center w-1/5 py-1 text-green-500 relative">
-            <Repeat className="h-5 w-5 text-green-500" />
-            <span className="text-xs mt-1">Negociar</span>
-            <div className="absolute bottom-0 w-6 h-1 bg-green-500 rounded-t-full"></div>
-          </div>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={navigateToWallet}
-          >
-            <Wallet className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Carteira</span>
-          </button>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={navigateToProfile}
-          >
-            <User className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Perfil</span>
-          </button>
-        </div>
+      <div>
+        <NavBottom />
       </div>
     </div>
   );
