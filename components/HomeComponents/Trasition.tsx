@@ -107,7 +107,7 @@ export default function Trasition() {
 
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 bg-[#212121]">
         <div className="p-4 mt-8 mb-24 border-2 border-green-500 rounded-3xl">
           <div className="px-4">
             <h2 className="text-2xl font-bold mt-2">Histórico de Transações</h2>
@@ -116,28 +116,13 @@ export default function Trasition() {
           <div className="p-4 mt-4">
             <div className=" overflow-hidden">
               <div className="flex justify-between items-center mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span>Entradas</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-white/80"></div>
-                    <span>Saídas</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-300"></div>
-                    <span>Saldo</span>
-                  </div>
-                </div>
-
                 <Tabs
                   defaultValue="7d"
                   value={timeRange}
                   onValueChange={setTimeRange}
                   className="w-auto"
                 >
-                  <TabsList className="bg-[#0a1530]">
+                  <TabsList className="bg-[#0e0e0e]">
                     <TabsTrigger value="7d">7 dias</TabsTrigger>
                     <TabsTrigger value="30d">30 dias</TabsTrigger>
                     <TabsTrigger value="90d">90 dias</TabsTrigger>
@@ -146,7 +131,7 @@ export default function Trasition() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-[#0a1530] rounded-xl p-4 flex items-center justify-between">
+                <div className="bg-[#0e0e0e] rounded-md p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                       <ArrowUpRight className="h-5 w-5 text-green-500" />
@@ -161,9 +146,9 @@ export default function Trasition() {
                   </div>
                 </div>
 
-                <div className="bg-[#0a1530] rounded-xl p-4 flex items-center justify-between">
+                <div className="bg-[#0e0e0e] rounded-xl p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-red-500/30 flex items-center justify-center">
                       <ArrowDownRight className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -171,7 +156,7 @@ export default function Trasition() {
                       <p className="text-xl font-bold">5.150,00 voin</p>
                     </div>
                   </div>
-                  <div className="text-white text-sm font-medium">-3.2%</div>
+                  <div className="text-red-500 text-sm font-medium">-3.2%</div>
                 </div>
               </div>
             </div>

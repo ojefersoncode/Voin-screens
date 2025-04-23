@@ -2,7 +2,6 @@
 
 import { Home, BarChart2, Repeat, Wallet, User } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function NavBottom() {
   const router = useRouter();
@@ -14,7 +13,7 @@ export default function NavBottom() {
   const navigateToTrade = () => router.push("/trade");
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#050a1c] border-t border-green-500/30 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-[#212121] border-t border-green-500/30 z-50">
       <div className="flex justify-around items-center h-16">
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"

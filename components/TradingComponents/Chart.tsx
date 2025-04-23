@@ -80,7 +80,7 @@ export default function Chart() {
   }, [selectedPair]);
 
   return (
-    <div className="min-h-screen bg-[#050a1c] text-white flex flex-col">
+    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col">
       <div>
         <NavTrading />
       </div>
@@ -92,7 +92,7 @@ export default function Chart() {
 
       {/* Informações */}
       <div className="p-4">
-        <div className="grid grid-cols-2 bg-[#0a1530] border-t border-green-500/30">
+        <div className="grid grid-cols-2 bg-[#212121] border-t border-green-500/30">
           <div className="p-3 border border-green-500/30">
             <div className="text-xs text-gray-400">Par</div>
             <div className="font-bold">{selectedPair.replace("USDT", "")}</div>
@@ -122,10 +122,10 @@ export default function Chart() {
       <div className="flex max-md:flex-wrap w-full items-center pb-20">
         <div className="flex w-60 max-sm:w-full p-4">
           <Select value={selectedPair} onValueChange={setSelectedPair}>
-            <SelectTrigger className="bg-[#0a1530] text-white p-2 rounded border border-green-500/30">
+            <SelectTrigger className="bg-[#212121] text-white p-2 rounded border border-green-500/30">
               <SelectValue placeholder="Selecione um par" />
             </SelectTrigger>
-            <SelectContent className="bg-[#0a1530] text-white border border-green-500/30">
+            <SelectContent className="bg-[#212121] text-white border border-green-500/30">
               {availablePairs.map((pair) => (
                 <SelectItem key={pair.value} value={pair.value}>
                   {pair.label}

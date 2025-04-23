@@ -20,6 +20,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
+import NavBottom from "../HomeComponents/NavBottom";
+import NavTrading from "../TradingComponents/NavbarTrading";
 
 // Tipo para os dados da API da Binance
 interface CryptoData {
@@ -245,23 +247,11 @@ export default function MarketPage() {
     });
 
   return (
-    <div className="min-h-screen bg-[#050a1c] text-white flex flex-col">
+    <div className="min-h-screen bg-[#212121] text-white flex flex-col">
       {/* Header */}
-      <header className="p-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-            <span className="text-white font-bold">V</span>
-          </div>
-          <span className="font-bold text-xl">VOIN</span>
-        </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white bg-green-500 rounded-md"
-        >
-          <Menu className="h-6 w-6" />
-        </Button>
-      </header>
+      <div>
+        <NavTrading />
+      </div>
 
       <div className="flex-1 p-4 pb-24">
         <h2 className="text-2xl font-bold mb-6">Mercado</h2>
@@ -273,7 +263,7 @@ export default function MarketPage() {
           onValueChange={setMarketTab}
           className="w-full mb-6"
         >
-          <TabsList className="bg-[#0a1530] w-full justify-start">
+          <TabsList className="bg-[#0e0e0e] w-full justify-start">
             <TabsTrigger value="all">Todas</TabsTrigger>
             <TabsTrigger value="favorites">Favoritas</TabsTrigger>
             <TabsTrigger value="gainers">Em Alta</TabsTrigger>
@@ -286,14 +276,14 @@ export default function MarketPage() {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <Input
             placeholder="Buscar criptomoeda..."
-            className="pl-10 bg-[#0a1530] border-none text-white"
+            className="pl-10 bg-[#0e0e0e] border-none text-white"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
         {/* Cabeçalho da tabela com opções de ordenação */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-[#0a1530] rounded-t-xl text-sm text-gray-400">
+        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-[#0e0e0e] rounded-t-xl text-sm text-gray-400">
           <div
             className="col-span-5 flex items-center gap-1 cursor-pointer"
             onClick={() => {
@@ -359,23 +349,23 @@ export default function MarketPage() {
               .map((_, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0a1530] border-t border-[#1a2a4a]"
+                  className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0e0e0e] border-t border-[#1a2a4a]"
                 >
                   <div className="col-span-5 flex items-center gap-3">
-                    <Skeleton className="h-8 w-8 rounded-full bg-[#1a2a4a]" />
+                    <Skeleton className="h-8 w-8 rounded-full bg-[#0e0e0e]" />
                     <div className="space-y-1">
-                      <Skeleton className="h-4 w-16 bg-[#1a2a4a]" />
-                      <Skeleton className="h-3 w-24 bg-[#1a2a4a]" />
+                      <Skeleton className="h-4 w-16 bg-[#0e0e0e]" />
+                      <Skeleton className="h-3 w-24 bg-[#0e0e0e]" />
                     </div>
                   </div>
                   <div className="col-span-3 flex flex-col items-end justify-center">
-                    <Skeleton className="h-4 w-20 bg-[#1a2a4a]" />
+                    <Skeleton className="h-4 w-20 bg-[#0e0e0e]" />
                   </div>
                   <div className="col-span-2 flex items-center justify-end">
-                    <Skeleton className="h-4 w-12 bg-[#1a2a4a]" />
+                    <Skeleton className="h-4 w-12 bg-[#0e0e0e]" />
                   </div>
                   <div className="col-span-2">
-                    <Skeleton className="h-12 w-full bg-[#1a2a4a]" />
+                    <Skeleton className="h-12 w-full bg-[#0e0e0e]" />
                   </div>
                 </div>
               ))
@@ -383,7 +373,7 @@ export default function MarketPage() {
             filteredAndSortedData.map((crypto) => (
               <div
                 key={crypto.symbol}
-                className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0a1530] border-t border-[#1a2a4a] hover:bg-[#1a2a4a] cursor-pointer"
+                className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0e0e0e] border-t border-[#0e0e0e] hover:bg-[#181818] cursor-pointer"
                 onClick={() => router.push(`/crypto/${crypto.symbol}`)}
               >
                 <div className="col-span-5 flex items-center gap-3">
@@ -451,7 +441,7 @@ export default function MarketPage() {
               </div>
             ))
           ) : (
-            <div className="bg-[#0a1530] p-8 text-center text-gray-400 rounded-b-xl">
+            <div className="bg-[#0e0e0e] p-8 text-center text-gray-400 rounded-b-xl">
               Nenhuma criptomoeda encontrada.
             </div>
           )}
@@ -469,47 +459,8 @@ export default function MarketPage() {
         </div>
       </div>
 
-      {/* Navegação inferior (Bottom Navigation) estilo Binance */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#050a1c] border-t border-green-500/30 z-50">
-        <div className="flex justify-around items-center h-16">
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={() => router.push("/")}
-          >
-            <Home className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Início</span>
-          </button>
-
-          <div className="flex flex-col items-center justify-center w-1/5 py-1 text-green-500 relative">
-            <BarChart2 className="h-5 w-5 text-green-500" />
-            <span className="text-xs mt-1">Mercado</span>
-            <div className="absolute bottom-0 w-6 h-1 bg-green-500 rounded-t-full"></div>
-          </div>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={() => router.push("/trade")}
-          >
-            <Repeat className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Negociar</span>
-          </button>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={navigateToWallet}
-          >
-            <Wallet className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Carteira</span>
-          </button>
-
-          <button
-            className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400"
-            onClick={navigateToProfile}
-          >
-            <User className="h-5 w-5 text-gray-400" />
-            <span className="text-xs mt-1">Perfil</span>
-          </button>
-        </div>
+      <div>
+        <NavBottom />
       </div>
     </div>
   );

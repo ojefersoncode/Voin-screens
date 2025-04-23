@@ -8,7 +8,7 @@ import Trasition from "../HomeComponents/Trasition";
 
 export default function VoinWallet() {
   return (
-    <div className="min-h-screen bg-[#050a1c] text-white flex flex-col">
+    <div className="min-h-screen bg-[#212121] text-white flex flex-col">
       <div>
         <NavTrading />
       </div>
