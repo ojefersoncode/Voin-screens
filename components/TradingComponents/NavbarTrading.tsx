@@ -10,7 +10,7 @@ export default function NavTrading() {
             <h1 className="font-mono font-bold  text-sm">VOIN</h1>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-2">
             <div className="flex items-center justify-center gap-1 px-4 py-1 rounded-md text-green-50  border border-green-50 border-opacity-20 cursor-pointer bg-[#212121] hover:bg-[#181818]">
               <img src="/Voin.png" alt="Logo" className="size-5" />
               <h1 className="mr-1 text-xs">130.000.00</h1>
