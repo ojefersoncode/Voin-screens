@@ -4,7 +4,7 @@ import { Button } from "../../components/ui/button";
 export default function NavTrading() {
   return (
     <>
-      <header className="bg-[#212121]">
+      <header className="bg-[#212121] border-b border-green-500/20 mb-2">
         <nav className="flex items-center justify-between p-4">
           <div className="flex items-center gap-1">
             <h1 className="font-mono font-bold  text-sm">VOIN</h1>
