@@ -27,7 +27,7 @@ export default function ProfilePage() {
   const [biometricAuth, setBiometricAuth] = useState(true);
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white flex flex-col">
+    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col">
       {/* Header */}
       <div>
         <NavTrading />
@@ -35,7 +35,7 @@ export default function ProfilePage() {
 
       <div className="flex-1 p-4 pb-24">
         {/* Perfil do usuário */}
-        <div className="border-2 border-green-500 rounded-3xl p-6 mb-6">
+        <div className="border-2 border-green-500 rounded-xl p-6 mb-6">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center">
               <UserCircle className="w-16 h-16 text-green-500" />
@@ -64,34 +64,34 @@ export default function ProfilePage() {
               <span className="text-sm">Progresso para Nível 6</span>
               <span className="text-sm">28%</span>
             </div>
-            <Progress value={28} className="h-2 bg-green-600/20">
-              <div
-                className="absolute z-10 h-full bg-green-600"
-                style={{ width: "28%" }}
-              />
-            </Progress>
-            <div className="mt-3 text-xs text-green-400 text-opacity-60 text-center">
+            <Progress
+              value={28}
+              className="h-3 z-0 bg-white [&>div]:bg-green-600"
+            ></Progress>
+            <div className="mt-3 text-xs text-green-100 text-opacity-90 text-center">
               Falta 72% para atingir o próximo nível
             </div>
           </div>
         </div>
 
         {/* Estatísticas da conta */}
-        <div className="p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4">Estatísticas da Conta</h3>
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold px-1 mb-4">
+            Estatísticas da Conta
+          </h3>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#0e0e0e] rounded-xl p-4">
+            <div className="bg-[#181818] rounded-xl p-4">
               <div className="text-gray-400 text-sm">Total de Transações</div>
               <div className="text-xl font-bold mt-1">247</div>
             </div>
 
-            <div className="bg-[#0e0e0e] rounded-xl p-4">
+            <div className="bg-[#181818] rounded-xl p-4">
               <div className="text-gray-400 text-sm">Membro desde</div>
               <div className="text-xl font-bold mt-1">Jan 2023</div>
             </div>
 
-            <div className="bg-[#0e0e0e] rounded-xl p-4">
+            <div className="bg-[#181818] rounded-xl p-4">
               <div className="text-gray-400 text-sm">Nível de Verificação</div>
               <div className="text-xl font-bold mt-1 flex items-center">
                 <Shield className="h-5 w-5 text-green-500 mr-1" />
@@ -99,7 +99,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="bg-[#0e0e0e] rounded-xl p-4">
+            <div className="bg-[#181818] rounded-xl p-4">
               <div className="text-gray-400 text-sm">Pontos de Fidelidade</div>
               <div className="text-xl font-bold mt-1 flex items-center">
                 <Star className="h-5 w-5 text-yellow-500 mr-1" />
@@ -109,115 +109,119 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Configurações */}
-        <div className="p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4">Configurações</h3>
+        <div>
+          {/* Configurações */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold px-1 mb-4">Configurações</h3>
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Bell className="h-5 w-5 text-green-500" />
-                <span>Notificações</span>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Bell className="h-5 w-5 text-green-500" />
+                  <span>Notificações</span>
+                </div>
+                <Switch
+                  checked={notifications}
+                  onCheckedChange={setNotifications}
+                  className="data-[state=checked]:bg-green-500"
+                />
               </div>
-              <Switch
-                checked={notifications}
-                onCheckedChange={setNotifications}
-                className="data-[state=checked]:bg-green-500"
-              />
-            </div>
 
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Lock className="h-5 w-5 text-green-500" />
-                <span>Autenticação Biométrica</span>
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Lock className="h-5 w-5 text-green-500" />
+                  <span>Autenticação Biométrica</span>
+                </div>
+                <Switch
+                  checked={biometricAuth}
+                  onCheckedChange={setBiometricAuth}
+                  className="data-[state=checked]:bg-green-500"
+                />
               </div>
-              <Switch
-                checked={biometricAuth}
-                onCheckedChange={setBiometricAuth}
-                className="data-[state=checked]:bg-green-500"
-              />
-            </div>
 
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Eye className="h-5 w-5 text-green-500" />
-                <span>Ocultar Saldo</span>
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Eye className="h-5 w-5 text-green-500" />
+                  <span>Ocultar Saldo</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
-            </div>
 
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Settings className="h-5 w-5 text-green-500" />
-                <span>Preferências</span>
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Settings className="h-5 w-5 text-green-500" />
+                  <span>Preferências</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
-            </div>
-          </div>
-        </div>
-
-        {/* Segurança */}
-        <div className="p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4">Segurança</h3>
-
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Lock className="h-5 w-5 text-green-500" />
-                <span>Alterar Senha</span>
-              </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
-            </div>
-
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Shield className="h-5 w-5 text-green-500" />
-                <span>Autenticação de 2 Fatores</span>
-              </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
-            </div>
-
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <CreditCard className="h-5 w-5 text-green-500" />
-                <span>Métodos de Pagamento</span>
-              </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
             </div>
           </div>
-        </div>
 
-        {/* Suporte */}
-        <div className="p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4">Suporte</h3>
+          {/* Segurança */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold px-1 mb-4">Segurança</h3>
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-green-500" />
-                <span>Central de Ajuda</span>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Lock className="h-5 w-5 text-green-500" />
+                  <span>Alterar Senha</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
+
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Shield className="h-5 w-5 text-green-500" />
+                  <span>Autenticação de 2 Fatores</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
+              </div>
+
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <CreditCard className="h-5 w-5 text-green-500" />
+                  <span>Métodos de Pagamento</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
+              </div>
             </div>
+          </div>
 
-            <div className="flex items-center justify-between p-3 bg-[#0e0e0e] rounded-xl">
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-green-500" />
-                <span>Histórico de Atividades</span>
+          {/* Suporte */}
+          <div className="mb-6">
+            <h3 className="text-lg px-1 font-semibold mb-4">Suporte</h3>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <HelpCircle className="h-5 w-5 text-green-500" />
+                  <span>Central de Ajuda</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
+
+              <div className="flex items-center justify-between p-3 bg-[#181818] rounded-xl">
+                <div className="flex items-center gap-3">
+                  <Clock className="h-5 w-5 text-green-500" />
+                  <span>Histórico de Atividades</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Botão de Logout */}
-        <Button
-          variant="outline"
-          className="w-full border-red-500 bg-red-500/20 text-white hover:text-white hover:bg-red-500/10 mt-4"
-        >
-          <LogOut className="h-5 w-5 mr-2" />
-          Sair da Conta
-        </Button>
+        <div className="mt-3">
+          <Button
+            variant="outline"
+            className="w-full border-red-500 bg-red-500/20 text-white hover:text-white hover:bg-red-500/10 mt-4"
+          >
+            <LogOut className="h-5 w-5 mr-2" />
+            Sair da Conta
+          </Button>
+        </div>
       </div>
 
       <div>

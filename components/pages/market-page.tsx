@@ -247,7 +247,7 @@ export default function MarketPage() {
     });
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white flex flex-col">
+    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col">
       {/* Header */}
       <div>
         <NavTrading />
@@ -263,7 +263,7 @@ export default function MarketPage() {
           onValueChange={setMarketTab}
           className="w-full mb-6"
         >
-          <TabsList className="bg-[#0e0e0e] w-full justify-start">
+          <TabsList className="bg-[#181818] w-full justify-start">
             <TabsTrigger value="all">Todas</TabsTrigger>
             <TabsTrigger value="favorites">Favoritas</TabsTrigger>
             <TabsTrigger value="gainers">Em Alta</TabsTrigger>
@@ -276,14 +276,14 @@ export default function MarketPage() {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <Input
             placeholder="Buscar criptomoeda..."
-            className="pl-10 bg-[#0e0e0e] border-none text-white"
+            className="pl-10 bg-[#181818] border-none text-white"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
         {/* Cabeçalho da tabela com opções de ordenação */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-[#0e0e0e] rounded-t-xl text-sm text-gray-400">
+        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-[#181818] rounded-t-xl text-sm text-gray-400">
           <div
             className="col-span-5 flex items-center gap-1 cursor-pointer"
             onClick={() => {
@@ -349,23 +349,23 @@ export default function MarketPage() {
               .map((_, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0e0e0e] border-t border-[#1a2a4a]"
+                  className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#212121] border-t border-[#1a2a4a]"
                 >
                   <div className="col-span-5 flex items-center gap-3">
-                    <Skeleton className="h-8 w-8 rounded-full bg-[#0e0e0e]" />
+                    <Skeleton className="h-8 w-8 rounded-full bg-[#212121]" />
                     <div className="space-y-1">
-                      <Skeleton className="h-4 w-16 bg-[#0e0e0e]" />
-                      <Skeleton className="h-3 w-24 bg-[#0e0e0e]" />
+                      <Skeleton className="h-4 w-16 bg-[#212121]" />
+                      <Skeleton className="h-3 w-24 bg-[#212121]" />
                     </div>
                   </div>
                   <div className="col-span-3 flex flex-col items-end justify-center">
-                    <Skeleton className="h-4 w-20 bg-[#0e0e0e]" />
+                    <Skeleton className="h-4 w-20 bg-[#212121]" />
                   </div>
                   <div className="col-span-2 flex items-center justify-end">
-                    <Skeleton className="h-4 w-12 bg-[#0e0e0e]" />
+                    <Skeleton className="h-4 w-12 bg-[#212121]" />
                   </div>
                   <div className="col-span-2">
-                    <Skeleton className="h-12 w-full bg-[#0e0e0e]" />
+                    <Skeleton className="h-12 w-full bg-[#212121]" />
                   </div>
                 </div>
               ))
@@ -373,7 +373,7 @@ export default function MarketPage() {
             filteredAndSortedData.map((crypto) => (
               <div
                 key={crypto.symbol}
-                className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0e0e0e] border-t border-[#0e0e0e] hover:bg-[#181818] cursor-pointer"
+                className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#181818] border-t border-[#363636] hover:bg-[#181818] cursor-pointer"
                 onClick={() => router.push(`/crypto/${crypto.symbol}`)}
               >
                 <div className="col-span-5 flex items-center gap-3">
