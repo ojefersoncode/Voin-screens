@@ -92,22 +92,22 @@ export default function Chart() {
 
       {/* Informações */}
       <div className="p-4">
-        <div className="grid grid-cols-2 bg-[#181818] border-t border-green-500/30">
-          <div className="p-3 border border-green-500/30">
+        <div className="grid grid-cols-2 bg-[#0e0e0e] border-t border-gray-500/30">
+          <div className="p-3 border border-gray-500/30">
             <div className="text-xs text-gray-400">Par</div>
             <div className="font-bold">{selectedPair.replace("USDT", "")}</div>
           </div>
-          <div className="p-3 border border-green-500/30">
+          <div className="p-3 border border-gray-500/30">
             <div className="text-xs text-gray-400">Hora</div>
             <div className="font-bold">
               {new Date().toLocaleTimeString().substring(0, 5)}
             </div>
           </div>
-          <div className="p-3 border border-green-500/30">
+          <div className="p-3 border border-gray-500/30">
             <div className="text-xs text-gray-400">Montante</div>
             <div className="font-bold">R$ {amount.toLocaleString()}</div>
           </div>
-          <div className="p-3 border border-green-500/30 flex items-center justify-between">
+          <div className="p-3 border border-gray-500/30 flex items-center justify-between">
             <div>
               <div className="text-xs text-gray-400">Preço atual</div>
               <div className="font-bold">
@@ -122,7 +122,7 @@ export default function Chart() {
       <div className="flex max-md:flex-wrap w-full items-center pb-20">
         <div className="flex w-60 max-sm:w-full p-4">
           <Select value={selectedPair} onValueChange={setSelectedPair}>
-            <SelectTrigger className="bg-[#181818] text-white p-2 rounded border border-green-500/30">
+            <SelectTrigger className="bg-[#181818] text-white p-2 rounded border border-gray-500/30">
               <SelectValue placeholder="Selecione um par" />
             </SelectTrigger>
             <SelectContent className="bg-[#181818] text-white border border-green-500/30">
